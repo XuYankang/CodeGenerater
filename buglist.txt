@@ -1,0 +1,4 @@
+2011-08-19
+1. 生成的Date没有import
+2. 生成的实体的extends BaseEntity引用错误
+3. spring mvc 的action没有处理
