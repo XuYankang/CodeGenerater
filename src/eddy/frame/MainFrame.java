@@ -5,8 +5,10 @@ import java.awt.Component;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
 import java.util.Vector;
 
+import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
@@ -63,7 +65,16 @@ public class MainFrame extends JFrame {
 		
 		JPanel pane = new JPanel();
 		pane.setLayout(new BorderLayout());
-		pane.add(createToolBar(), BorderLayout.NORTH);
+		
+		JToolBar toolBar = null;
+		try {
+			toolBar = createToolBar();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		if(toolBar != null) {
+			pane.add(toolBar, BorderLayout.NORTH);
+		}
 
 		setJMenuBar(createMenuBar());
 		
@@ -98,7 +109,7 @@ public class MainFrame extends JFrame {
 		UIManager.LookAndFeelInfo[] installedLafs = UIManager.getInstalledLookAndFeels();
 		for (UIManager.LookAndFeelInfo lafInfo : installedLafs) {
 			try {
-				Class lnfClass = Class.forName(lafInfo.getClassName());
+				Class<?> lnfClass = Class.forName(lafInfo.getClassName());
 				LookAndFeel laf = (LookAndFeel) lnfClass.newInstance();
 				if(laf.isSupportedLookAndFeel()) {
 					String name = lafInfo.getName();
@@ -115,7 +126,7 @@ public class MainFrame extends JFrame {
 	 */
 	private void setUI() {
 		try {
-			Class lnfClass = Class.forName("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");
+			Class<?> lnfClass = Class.forName("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");
 			if(lnfClass == null) 
 				return;
 			
@@ -141,7 +152,7 @@ public class MainFrame extends JFrame {
 				public void actionPerformed(ActionEvent e) {
 					String name = e.getActionCommand();
 					try {
-						Class lnfClass = Class.forName(name);
+						Class<?> lnfClass = Class.forName(name);
 						LookAndFeel laf = (LookAndFeel) lnfClass.newInstance();
 						UIManager.setLookAndFeel(laf);
 						SwingUtilities.updateComponentTreeUI(MainFrame.this);
@@ -157,7 +168,12 @@ public class MainFrame extends JFrame {
 		
 		menu = new JMenu("File");
 		menu.setFont(Resources.getResources().getSysFont_CN());
-		menu.add(createNewMenu());
+		try {
+			menu.add(createNewMenu());
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
 		
 		JMenuItem item = new JMenuItem("Open");
 		item.setFont(Resources.getResources().getSysFont_CN());
@@ -202,20 +218,20 @@ public class MainFrame extends JFrame {
 		return menuBar;
 	}
 
-	public JMenu createNewMenu() {
+	public JMenu createNewMenu() throws Exception {
 		JMenu menu = new JMenu("new");
 		menu.setFont(Resources.getResources().getSysFont_CN());
 		
 		JMenuItem item = new JMenuItem("File");
 		item.setFont(Resources.getResources().getSysFont_CN());
-		item.setIcon(new ImageIcon("resources/new.gif"));
+		item.setIcon(new ImageIcon(ImageIO.read(Resources.getResources().getResourceStream("images/new.gif"))));
 		item.setActionCommand("newDoc");
 		item.addActionListener(docPerformaer);
 		menu.add(item);
 		
 		item = new JMenuItem("project");
 		item.setFont(Resources.getResources().getSysFont_CN());
-		item.setIcon(new ImageIcon("resources/project.gif"));
+		item.setIcon(new ImageIcon(ImageIO.read(Resources.getResources().getResourceStream("images/project.gif"))));
 		item.setActionCommand("newProject");
 		item.addActionListener(docPerformaer);
 		menu.add(item);
@@ -223,24 +239,28 @@ public class MainFrame extends JFrame {
 		return menu;
 	}
 	
-	public JToolBar createToolBar() {
+	public JToolBar createToolBar() throws Exception {
 		JToolBar toolBar = new JToolBar();
-		JButton btn = new JButton(new ImageIcon("resources/new.gif"));
+		BufferedImage image = ImageIO.read(Resources.getResources().getResourceStream("images/new.gif"));
+		JButton btn = new JButton(new ImageIcon(image));
 		btn.setActionCommand("newDoc");
 		btn.addActionListener(docPerformaer);
 		toolBar.add(btn);
 		
-		btn = new JButton(new ImageIcon("resources/open.gif"));
+		image = ImageIO.read(Resources.getResources().getResourceStream("images/open.gif"));
+		btn = new JButton(new ImageIcon(image));
 		btn.setActionCommand("openDoc");
 		btn.addActionListener(docPerformaer);
 		toolBar.add(btn);
 		
-		btn = new JButton(new ImageIcon("resources/save.gif"));
+		image = ImageIO.read(Resources.getResources().getResourceStream("images/save.gif"));
+		btn = new JButton(new ImageIcon(image));
 		btn.setActionCommand("saveDoc");
 		btn.addActionListener(docPerformaer);
 		toolBar.add(btn);
 		
-		btn = new JButton(new ImageIcon("resources/project.gif"));
+		image = ImageIO.read(Resources.getResources().getResourceStream("images/project.gif"));
+		btn = new JButton(new ImageIcon(image));
 		btn.setToolTipText("new project");
 		btn.setActionCommand("newProject");
 		btn.addActionListener(docPerformaer);
