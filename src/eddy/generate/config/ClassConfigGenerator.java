@@ -20,7 +20,7 @@ public class ClassConfigGenerator {
 	
 	/**
 	 * 
-	 * @param projectPath ÏîÄ¿Â·¾¶
+	 * @param projectPath é¡¹ç›®è·¯å¾„
 	 */
 	public static void generateMainConfig(String projectPath) {
 		try {
@@ -59,7 +59,7 @@ public class ClassConfigGenerator {
 	
 	
 	/**
-	 * ¶ÔÃ¿¸öÀàÉú³ÉµÄÁÙÊ±ÅäÖÃÎÄ¼ş
+	 * å¯¹æ¯ä¸ªç±»ç”Ÿæˆçš„ä¸´æ—¶é…ç½®æ–‡ä»¶
 	 * @param ibatsiConfig
 	 * @param className
 	 * @param dbTable

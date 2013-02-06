@@ -17,7 +17,7 @@ import eddy.frame.docpane.DocController;
 import eddy.log.DebugLogger;
 
 /**
- * ×ÊÔ´ÎÄ¼şÊ÷
+ * èµ„æºæ–‡ä»¶æ ‘
  * @author Eddy
  *
  */
@@ -48,7 +48,7 @@ public class FileTree {
 	}
 
 	/**
-	 * Éú³ÉÎÄ¼ş×ÊÔ´µ¼º½Ê÷
+	 * ç”Ÿæˆæ–‡ä»¶èµ„æºå¯¼èˆªæ ‘
 	 * 
 	 * @return
 	 */
@@ -59,7 +59,7 @@ public class FileTree {
 			FileNode fileNode = new FileNode(filelist[k]);
 			node = new DefaultMutableTreeNode(fileNode);
 			top.add(node);
-			node.add(new DefaultMutableTreeNode("ÕıÔÚ¼ÓÔØ"));
+			node.add(new DefaultMutableTreeNode("æ­£åœ¨åŠ è½½"));
 		}
 
 		treeModel = new DefaultTreeModel(top);
@@ -95,7 +95,7 @@ public class FileTree {
 					extname = extname.substring(n);
 					
 					if(!Resources.getResources().isOpenFileType(extname)) {
-						int ret = JOptionPane.showConfirmDialog(null, "Î´ÖªÎÄ¼şÀàĞÍ£¬È·¶¨´ò¿ª?", "ÌáÊ¾", JOptionPane.YES_NO_OPTION);
+						int ret = JOptionPane.showConfirmDialog(null, "æœªçŸ¥æ–‡ä»¶ç±»å‹ï¼Œç¡®å®šæ‰“å¼€?", "æç¤º", JOptionPane.YES_NO_OPTION);
 						if(ret == JOptionPane.NO_OPTION)
 							return;
 					}
@@ -121,7 +121,7 @@ public class FileTree {
 			
 			File fff = filelist[k];
 			if(fff.listFiles() != null)
-				node.add(new DefaultMutableTreeNode("ÕıÔÚ¼ÓÔØ"));
+				node.add(new DefaultMutableTreeNode("æ­£åœ¨åŠ è½½"));
 		}
 
 		return node;

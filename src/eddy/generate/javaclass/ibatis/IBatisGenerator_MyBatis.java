@@ -254,9 +254,9 @@ public class IBatisGenerator_MyBatis implements IBatisGenerator {
 			
 			OutputFormat fmt = new OutputFormat();
 			fmt.setEncoding("utf-8");
-			fmt.setIndent(true); //ÉèÖÃÊÇ·ñËõ½ø
-			fmt.setIndent("\t"); //ÒÔ¿Õ¸ñ·½Ê½ÊµÏÖËõ½ø
-			fmt.setNewlines(true); //ÉèÖÃÊÇ·ñ»»ĞĞ
+			fmt.setIndent(true); //è®¾ç½®æ˜¯å¦ç¼©è¿›
+			fmt.setIndent("\t"); //ä»¥ç©ºæ ¼æ–¹å¼å®ç°ç¼©è¿›
+			fmt.setNewlines(true); //è®¾ç½®æ˜¯å¦æ¢è¡Œ
 			
 			XMLWriter writer = new XMLWriter(fmt);
 			OutputStream out = new FileOutputStream(configFilePath);

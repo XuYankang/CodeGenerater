@@ -1,30 +1,27 @@
 package eddy.generate.javaclass;
 
 import javax.swing.JCheckBox;
-import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import eddy.generate.config.ProjectConfig;
-
 import resources.Resources;
 
 /**
- * ibatis配置面板
+ * ibatis閰嶇疆闈㈡澘
  * @author Eddy
  *
  */
 public class IbatisConfigPane extends JPanel {
 	
 	private static final long serialVersionUID = 1L;
-	private JCheckBox insertChk = new JCheckBox("插入Sql");
-	private JCheckBox deleteChk = new JCheckBox("删除Sql");
-	private JCheckBox updateChk = new JCheckBox("修改Sql");
-	private JCheckBox selectChk = new JCheckBox("查询Sql");
+	private JCheckBox insertChk = new JCheckBox("鎻掑叆Sql");
+	private JCheckBox deleteChk = new JCheckBox("鍒犻櫎Sql");
+	private JCheckBox updateChk = new JCheckBox("淇敼Sql");
+	private JCheckBox selectChk = new JCheckBox("鏌ヨSql");
 	
-	private JCheckBox selectLimitCountChk = new JCheckBox("记录数Sql");
-	private JCheckBox selectByLimitChk = new JCheckBox("分页查询Sql");
+	private JCheckBox selectLimitCountChk = new JCheckBox("璁板綍鏁癝ql");
+	private JCheckBox selectByLimitChk = new JCheckBox("鍒嗛〉鏌ヨSql");
 	
 	private String insertSqlID = "insert";
 	private String deleteSqlID = "deleteById";
@@ -50,7 +47,7 @@ public class IbatisConfigPane extends JPanel {
 		lb.setBounds(10, 20, 500, 40);
 		add(lb);
 		
-		lb = new JLabel("选择功能:");
+		lb = new JLabel("閫夋嫨鍔熻兘:");
 		lb.setFont(Resources.getResources().getSysFont_CN());
 		lb.setBounds(10, 50, 500, 25);
 		add(lb);
@@ -68,7 +65,7 @@ public class IbatisConfigPane extends JPanel {
 		daoTxtField.setFont(Resources.getResources().getSysFont_EN());
 		add(daoTxtField);
 		
-		lb = new JLabel("sql文件:");
+		lb = new JLabel("sql鏂囦欢:");
 		lb.setFont(Resources.getResources().getSysFont_CN());
 		lb.setBounds(startX, startY+=gap, 70, 30);
 		add(lb);
@@ -76,7 +73,7 @@ public class IbatisConfigPane extends JPanel {
 		sqlFileNameTxt.setFont(Resources.getResources().getSysFont_EN());
 		add(sqlFileNameTxt);
 
-		lb = new JLabel("命名空间:");
+		lb = new JLabel("鍛藉悕绌洪棿:");
 		lb.setFont(Resources.getResources().getSysFont_CN());
 		lb.setBounds(startX, startY+=gap, 70, 30);
 		add(lb);

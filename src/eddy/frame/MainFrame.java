@@ -5,7 +5,6 @@ import java.awt.Component;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.net.URL;
 import java.util.Vector;
 
 import javax.swing.BorderFactory;
@@ -31,7 +30,7 @@ import eddy.frame.docpane.DocEditPane;
 import eddy.frame.navigator.NavigatorPane;
 
 /**
- * ³Ì¶ÈÖ÷´°Ìå
+ * ç¨‹åº¦ä¸»çª—ä½“
  * @author Eddy
  *
  */
@@ -93,7 +92,7 @@ public class MainFrame extends JFrame {
 	}
 	
 	/**
-	 * ¼ÓÔØÍâ¹Û
+	 * åŠ è½½å¤–è§‚
 	 */
 	private void loadLookAndFeel() {
 		UIManager.LookAndFeelInfo[] installedLafs = UIManager.getInstalledLookAndFeels();
@@ -112,7 +111,7 @@ public class MainFrame extends JFrame {
 	}
 	
 	/**
-	 * ÉèÖÃÍâ¹Û
+	 * è®¾ç½®å¤–è§‚
 	 */
 	private void setUI() {
 		try {

@@ -18,7 +18,7 @@ import eddy.frame.docpane.TextFileOperator;
 import eddy.generate.config.ClassConfigGenerator;
 
 /**
- * JSÄ£¿éÀàÉú³É
+ * JSæ¨¡å—ç±»ç”Ÿæˆ
  * @author User
  *
  */
@@ -33,7 +33,7 @@ public class JSGeneratorN {
 	}
 	
 	/**
-	 * Éú³ÉJSÄ£¿é
+	 * ç”ŸæˆJSæ¨¡å—
 	 * @throws Exception
 	 */
 	public void generateJSFile() throws Exception {
@@ -49,13 +49,13 @@ public class JSGeneratorN {
 			fieldsMap.put(fieldName.toLowerCase(), node);
 		}
 		
-		//1. ¶ÁÈ¡Ä£°åÎÄ¼ş
+		//1. è¯»å–æ¨¡æ¿æ–‡ä»¶
 		InputStream ins = Resources.getResources().getResourceStream("web/JSModule.js.templete");
 		BufferedReader reader = new BufferedReader(new InputStreamReader(ins, "UTF-8"));
 		StringBuffer fileBuf = new StringBuffer();
 		String line = null;
 		while((line = reader.readLine()) != null) {
-			//2. Ìæ»»ÆäÖĞµÄ¹Ø¼ü×Ö¶Î
+			//2. æ›¿æ¢å…¶ä¸­çš„å…³é”®å­—æ®µ
 			line = line.replace("${ModuleComments}", "comments");
 			line = line.replace("${ModuleClassFullName}", generateAssistant.controllerNameField.getText() + "Panel");
 			line = line.replace("${ModuleClassHideID}", generateAssistant.primaryKeyHiddenField.getText());
@@ -74,7 +74,7 @@ public class JSGeneratorN {
 			actionpath = ".." + mapping + "delete.action";
 			line = line.replace("${ModuleActionDelete}", actionpath);
 			
-			//Éú³É±íµ¥Form
+			//ç”Ÿæˆè¡¨å•Form
 			StringBuffer editFormItemsBuffer = new StringBuffer();
 			String[] fields = generateAssistant.editFormField.getText().split(",");
 			for(int i = 0; i < fields.length; i++) {
@@ -99,11 +99,11 @@ public class JSGeneratorN {
 			}
 			line = line.replace("${ModuleEditItems}", editFormItemsBuffer.toString());
 			
-			//${ModuleSearchItems} ²éÑ¯ÊôĞÔÁĞ±í
+			//${ModuleSearchItems} æŸ¥è¯¢å±æ€§åˆ—è¡¨
 			String serachItems = getSearchItems(fieldsMap);
 			line = line.replace("${ModuleSearchItems}", serachItems);
 			
-			//Éú³Égrid items
+			//ç”Ÿæˆgrid items
 			StringBuffer gridCMItemsBuffer = new StringBuffer();
 			fields = generateAssistant.gridField.getText().split(",");
 			for(int i = 0; i < fields.length; i++) {
@@ -119,7 +119,7 @@ public class JSGeneratorN {
 			}
 			line = line.replace("${ModuleGridColumnItems}", gridCMItemsBuffer.toString());
 			
-			//Éú³Éstore fields
+			//ç”Ÿæˆstore fields
 			StringBuffer storeFieldsBuffer = new StringBuffer();
 			storeFieldsBuffer.append("\n");
 			for(int j = 0; j < fieldsList.size(); j++) {
@@ -138,7 +138,7 @@ public class JSGeneratorN {
 			line = line.replace("${ModuleGridDataStoreFields}", storeFieldsBuffer.toString());
 			
 			/*
-			 * ${ModuleGridSortInfo} ÅÅĞòÊôĞÔ
+			 * ${ModuleGridSortInfo} æ’åºå±æ€§
 			 * 	sortInfo: {
 					field: 'menuOrder',
 					direction: 'ASC'
@@ -148,7 +148,7 @@ public class JSGeneratorN {
 		}
 		reader.close();
 		
-		//3. Ğ´µ½ÎÄ¼ş
+		//3. å†™åˆ°æ–‡ä»¶
 		String filePath = projectPath + "/WebRoot/modules/" + generateAssistant.jsFileNameField.getText();
 		File file = new File(filePath);
 		file.getParentFile().mkdirs();

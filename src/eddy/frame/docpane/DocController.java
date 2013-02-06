@@ -4,18 +4,18 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * ÎÄµµ¿ØÖÆÖĞĞÄ£¬´ò¿ªµÄËùÓĞÎÄµµ¶¼ÓÉ¸Ã¿ØÖÆÖĞĞÄ¿ØÖÆ
+ * æ–‡æ¡£æ§åˆ¶ä¸­å¿ƒï¼Œæ‰“å¼€çš„æ‰€æœ‰æ–‡æ¡£éƒ½ç”±è¯¥æ§åˆ¶ä¸­å¿ƒæ§åˆ¶
  * @author Eddy
  *
  */
 public class DocController {
 	
-	private static int index = 0;//ÎÄµµIDºÅ
+	private static int index = 0;//æ–‡æ¡£IDå·
 	
-	private static DocActionListener docActionner = null;//ÎÄµµ²Ù×÷Ö´ĞĞÆ÷
+	private static DocActionListener docActionner = null;//æ–‡æ¡£æ“ä½œæ‰§è¡Œå™¨
 	
 	/**
-	 * µÃµ½ÎÄµµÖ´ĞĞÆ÷
+	 * å¾—åˆ°æ–‡æ¡£æ‰§è¡Œå™¨
 	 * @return
 	 */
 	public static DocActionListener getDocActionner() {
@@ -23,7 +23,7 @@ public class DocController {
 	}
 
 	/**
-	 * ÉèÖÃÎÄµµÖ´ĞĞÆ÷£¬Íê³É´ò¿ªÎÄ¼ş¡¢ĞÂ½¨ÎÄ¼ş¡¢ÏÔÊ¾ÎÄ¼ş¶Ô»°¿òµÈ²Ù×÷
+	 * è®¾ç½®æ–‡æ¡£æ‰§è¡Œå™¨ï¼Œå®Œæˆæ‰“å¼€æ–‡ä»¶ã€æ–°å»ºæ–‡ä»¶ã€æ˜¾ç¤ºæ–‡ä»¶å¯¹è¯æ¡†ç­‰æ“ä½œ
 	 * @param docActionner
 	 */
 	public static void setDocActionner(DocActionListener docActionner) {
@@ -31,7 +31,7 @@ public class DocController {
 	}
 
 	/**
-	 * µÃµ½IDĞòºÅ
+	 * å¾—åˆ°IDåºå·
 	 * @return
 	 */
 	public static int getIndex() {
@@ -41,7 +41,7 @@ public class DocController {
 	private Map<Integer, EditTextPane> editPaneMap = new HashMap<Integer, EditTextPane>();
 	
 	/**
-	 * µÃµ½ÎÄµµMAP
+	 * å¾—åˆ°æ–‡æ¡£MAP
 	 * @return
 	 */
 	public Map<Integer, EditTextPane> getEditPaneMap() {
@@ -54,7 +54,7 @@ public class DocController {
 	}
 	
 	/**
-	 * µÃµ½¿ØÖÆÆ÷
+	 * å¾—åˆ°æ§åˆ¶å™¨
 	 * @return
 	 */
 	public static DocController getDocController() {
@@ -64,8 +64,8 @@ public class DocController {
 	}
 	
 	/**
-	 * µÃµ½ÎÄµµ
-	 * @param index ĞòºÅ
+	 * å¾—åˆ°æ–‡æ¡£
+	 * @param index åºå·
 	 * @return EditTextPane
 	 */
 	public EditTextPane getEditTextPane(int index) {
@@ -73,8 +73,8 @@ public class DocController {
 	}
 	
 	/**
-	 * Ìí¼ÓÎÄµµ
-	 * @param index ĞòºÅ
+	 * æ·»åŠ æ–‡æ¡£
+	 * @param index åºå·
 	 * @param etc EditTextPane
 	 */
 	public void addEditTextPane(int index, EditTextPane etc) {
@@ -82,7 +82,7 @@ public class DocController {
 	}
 	
 	/**
-	 * É¾³ıÎÄµµ
+	 * åˆ é™¤æ–‡æ¡£
 	 * @param etc EditTextPane
 	 */
 	public void removeEditTextPane(EditTextPane etc) {

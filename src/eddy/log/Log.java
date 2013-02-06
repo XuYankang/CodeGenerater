@@ -3,7 +3,7 @@ package eddy.log;
 import java.util.Date;
 
 /**
- * ÈÕÖ¾Àà
+ * æ—¥å¿—ç±»
  * @author eddy
  *
  */
@@ -12,8 +12,8 @@ public class Log {
 	private Date when;
 	private String where;
 	private String doWhat;
-	private String type;//ÀàĞÍ£¬´æÊı¾İ¿â»òÎÄ¼şµÈ
-	private int level;//ÈÕÖ¾µÈ¼¶
+	private String type;//ç±»å‹ï¼Œå­˜æ•°æ®åº“æˆ–æ–‡ä»¶ç­‰
+	private int level;//æ—¥å¿—ç­‰çº§
 	public String getDoWhat() {
 		return doWhat;
 	}

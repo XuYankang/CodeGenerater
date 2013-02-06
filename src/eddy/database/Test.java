@@ -1,13 +1,9 @@
 package eddy.database;
 
 import java.sql.Connection;
-import java.sql.DatabaseMetaData;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
-
-import eddy.generate.javaclass.ClassGenerator;
 
 public class Test {
 	DatabaseConnection dbConnect = new DatabaseConnection();

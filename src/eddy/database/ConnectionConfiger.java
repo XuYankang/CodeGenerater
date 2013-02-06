@@ -11,7 +11,7 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 /**
- * 数据库连接配置对话框
+ * 鏁版嵁搴撹繛鎺ラ厤缃璇濇
  * @author Eddy
  *
  */

@@ -4,47 +4,47 @@ package eddy.frame.navigator;
 public interface ProjectActionListener {
 	
 	/**
-	 * ĞÂ½¨ÏîÄ¿
+	 * æ–°å»ºé¡¹ç›®
 	 */
 	public void newProject();
 	
 	/**
-	 * ´ò¿ªÏîÄ¿
+	 * æ‰“å¼€é¡¹ç›®
 	 */
 	public void openProject();
 	
 	/**
-	 * Ìí¼ÓÄ¿Â¼
+	 * æ·»åŠ ç›®å½•
 	 */
 	public void addDir();
 
 	/**
-	 * Ìí¼ÓÎÄ¼ş
+	 * æ·»åŠ æ–‡ä»¶
 	 */
 	public void addFile();
 	
 	/**
-	 * ĞÂ½¨JAVAÀà
+	 * æ–°å»ºJAVAç±»
 	 */
 	public void newClass();
 	
 	/**
-	 * ĞÂ½¨WebÓ¦ÓÃÄ£¿é
+	 * æ–°å»ºWebåº”ç”¨æ¨¡å—
 	 */
 	public void newWebModel();
 	
 	/**
-	 * É¾³ıÎÄ¼ş
+	 * åˆ é™¤æ–‡ä»¶
 	 */
 	public void deleteFile();
 	
 	/**
-	 * ĞÂ½¨ÎÄ¼ş
+	 * æ–°å»ºæ–‡ä»¶
 	 */
 	public void newFile();
 
 	/**
-	 * ²âÊÔ
+	 * æµ‹è¯•
 	 */
 	public void doTest();
 }

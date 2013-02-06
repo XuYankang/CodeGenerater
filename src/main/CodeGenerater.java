@@ -9,7 +9,7 @@ import javax.swing.SwingUtilities;
 import eddy.frame.MainFrame;
 
 /**
- * ´úÂëÉú³ÉÆ÷Èë¿Ú
+ * ä»£ç ç”Ÿæˆå™¨å…¥å£
  * @author Eddy
  *
  */

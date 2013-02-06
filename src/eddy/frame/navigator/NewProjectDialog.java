@@ -26,7 +26,7 @@ import eddy.database.DatabaseConnection;
 import eddy.generate.config.ProjectConstant;
 
 /**
- * ĞÂ½¨ÏîÄ¿¶Ô»°¿ò
+ * æ–°å»ºé¡¹ç›®å¯¹è¯æ¡†
  * @author Eddy
  *
  */
@@ -39,7 +39,7 @@ public class NewProjectDialog {
 	private JButton cancelBtn = null;
 	private JButton nextBtn = null;
 	private JButton backBtn = null;
-	private CardLayout card = null; // CardLayout²¼¾Ö¹ÜÀíÆ÷	
+	private CardLayout card = null; // CardLayoutå¸ƒå±€ç®¡ç†å™¨	
 	private JPanel centerPane;
 	private JPanel contentPane = new JPanel();
 	
@@ -97,7 +97,7 @@ public class NewProjectDialog {
 	private JPanel createProjectInfoPane() {
 		JPanel projectJnfoPane = new JPanel();
 		String topText = "<html>\n" +
-        "<b><font size=+1 color=green>¹¤³ÌÅäÖÃ</font></b>\n" +
+        "<b><font size=+1 color=green>å·¥ç¨‹é…ç½®</font></b>\n" +
         "\n";
 		
 		projectJnfoPane.setLayout(new BorderLayout());
@@ -155,7 +155,7 @@ public class NewProjectDialog {
 	private JPanel createIbatisSetPane() {
 		JPanel ibatisSetPane = new JPanel();
 		String topText = "<html>\n" +
-        "<b><font size=+1 color=green>IbatisÅäÖÃ</font></b>\n" +
+        "<b><font size=+1 color=green>Ibatisé…ç½®</font></b>\n" +
         "\n";
 		
 		ibatisSetPane.setLayout(new BorderLayout());
@@ -196,7 +196,7 @@ public class NewProjectDialog {
 		JPanel mvcpane = new JPanel();
 		
 		String topText = "<html>\n" +
-        "<b><font size=+1 color=green>MVC ÀàĞÍÅäÖÃ</font></b>\n" +
+        "<b><font size=+1 color=green>MVC ç±»å‹é…ç½®</font></b>\n" +
         "\n";
 		
 		mvcpane.setLayout(new BorderLayout());
@@ -262,7 +262,7 @@ public class NewProjectDialog {
 	}
 	
 	/**
-	 * ÏÔÊ¾Ïòµ¼¶Ô»°¿ò
+	 * æ˜¾ç¤ºå‘å¯¼å¯¹è¯æ¡†
 	 * @return
 	 */
 	public boolean showDialog() {

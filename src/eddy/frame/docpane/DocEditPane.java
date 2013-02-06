@@ -15,7 +15,7 @@ import resources.Resources;
 import eddy.frame.ButtonTabComponent;
 
 /**
- * 多面板文档编辑，可以打开多个文档，并且可以选择关闭
+ * 澶氶潰鏉挎枃妗ｇ紪杈戯紝鍙互鎵撳紑澶氫釜鏂囨。锛屽苟涓斿彲浠ラ�夋嫨鍏抽棴
  * @author Eddy
  *
  */

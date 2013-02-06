@@ -28,7 +28,7 @@ import org.dom4j.io.SAXReader;
 import eddy.generate.config.ClassConfigGenerator;
 
 /**
- * WebÄ£¿éÎÄ¼şÉú³ÉÏòµ¼
+ * Webæ¨¡å—æ–‡ä»¶ç”Ÿæˆå‘å¯¼
  * @author Eddy
  *
  */
@@ -59,7 +59,7 @@ public class WebModelGenerateAssistant {
 	public WebModelGenerateAssistant(JFrame parent, String projectPath) {
 		this.projectPath = projectPath;
 		dialog = new JDialog(parent);
-		dialog.setTitle("WebModelÏòµ¼");
+		dialog.setTitle("WebModelå‘å¯¼");
 		this.parent = parent;
 		assistantPane.setLayout(new BorderLayout());
 		assistantPane.add(createMainPane(), BorderLayout.CENTER);
@@ -79,13 +79,13 @@ public class WebModelGenerateAssistant {
 		JScrollPane jsp;
 		
 		jsp = new JScrollPane(createSelEntityPane(), JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-		tabPane.add("Ñ¡ÔñÊµÌå", jsp);
+		tabPane.add("é€‰æ‹©å®ä½“", jsp);
 		
 		jsp = new JScrollPane(createPagePane(), JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-		tabPane.add("Ò³ÃæÅäÖÃ", jsp);
+		tabPane.add("é¡µé¢é…ç½®", jsp);
 		
 		jsp = new JScrollPane(createSpringMVCPane(), JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-		tabPane.add("springMVCÅäÖÃ", jsp);
+		tabPane.add("springMVCé…ç½®", jsp);
 		
 		mainPane.add(tabPane, BorderLayout.CENTER);
 		return mainPane;
@@ -127,25 +127,25 @@ public class WebModelGenerateAssistant {
 		jsFileNameField.setBounds(100, startY, 400, 25);
 		pagePane.add(jsFileNameField);
 		
-		lb = new JLabel("Òş²ØÖ÷¼ü");
+		lb = new JLabel("éšè—ä¸»é”®");
 		lb.setBounds(startX, startY+=gapY, 100, 25);
 		pagePane.add(lb);
 		primaryKeyHiddenField.setBounds(100, startY, 400, 25);
 		pagePane.add(primaryKeyHiddenField);
 		
-		lb = new JLabel("²éÑ¯Ìõ¼ş");
+		lb = new JLabel("æŸ¥è¯¢æ¡ä»¶");
 		lb.setBounds(startX, startY+=gapY, 100, 25);
 		pagePane.add(lb);
 		searchFormField.setBounds(100, startY, 400, 25);
 		pagePane.add(searchFormField);
 		
-		lb = new JLabel("±à¼­ÊôĞÔ");
+		lb = new JLabel("ç¼–è¾‘å±æ€§");
 		lb.setBounds(startX, startY+=gapY, 100, 25);
 		pagePane.add(lb);
 		editFormField.setBounds(100, startY, 400, 25);
 		pagePane.add(editFormField);
 		
-		lb = new JLabel("Grid ÁĞ");
+		lb = new JLabel("Grid åˆ—");
 		lb.setBounds(startX, startY+=gapY, 100, 25);
 		pagePane.add(lb);
 		gridField.setBounds(100, startY, 400, 25);
@@ -155,7 +155,7 @@ public class WebModelGenerateAssistant {
 	}
 	
 	/**
-	 * Éú³ÉÑ¡ÔñÊµÌåÃæ°å
+	 * ç”Ÿæˆé€‰æ‹©å®ä½“é¢æ¿
 	 * @return
 	 */
 	private JPanel createSelEntityPane() {
@@ -165,7 +165,7 @@ public class WebModelGenerateAssistant {
 		int startX = 30;
 		int gapY = 40;
 		
-		JLabel lb = new JLabel("Ñ¡ÔñÊµÌå");
+		JLabel lb = new JLabel("é€‰æ‹©å®ä½“");
 		lb.setBounds(startX, startY, 100, 25);
 		selEntityPane.add(lb);
 		entityCombo = new JComboBox();
@@ -250,11 +250,11 @@ public class WebModelGenerateAssistant {
 	}
 	
 	/**
-	 * Éú³ÉÏÂ·½µÄ²Ù×÷°´Å¥
+	 * ç”Ÿæˆä¸‹æ–¹çš„æ“ä½œæŒ‰é’®
 	 */
 	private JPanel createOperatePane() {
 		JPanel operatePane = new JPanel();
-		JButton btn = new JButton("È·¶¨");
+		JButton btn = new JButton("ç¡®å®š");
 		btn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				ok = true;
@@ -263,7 +263,7 @@ public class WebModelGenerateAssistant {
 		});
 		operatePane.add(btn);
 		
-		btn = new JButton("È¡Ïû");
+		btn = new JButton("å–æ¶ˆ");
 		btn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dialog.setVisible(false);

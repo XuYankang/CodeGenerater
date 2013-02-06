@@ -3,45 +3,45 @@ package eddy.frame.docpane;
 import java.io.File;
 
 /**
- * ÎÄ¼ş»ù±¾²Ù×÷
+ * æ–‡ä»¶åŸºæœ¬æ“ä½œ
  * @author Eddy
  *
  */
 public interface DocActionListener {
 	
 	/**
-	 * ´ò¿ªÎÄ¼ş
-	 * @param f ÎÄ¼şFile
+	 * æ‰“å¼€æ–‡ä»¶
+	 * @param f æ–‡ä»¶File
 	 * @return
 	 */
 	public boolean openDoc(File f);
 	
 	/**
-	 * ´ò¿ªÎÄ¼ş
+	 * æ‰“å¼€æ–‡ä»¶
 	 * @param f
-	 * @param encoding ±àÂë¸ñÊ½
+	 * @param encoding ç¼–ç æ ¼å¼
 	 * @return
 	 */
 	public boolean openDoc(File f, String encoding);
 	
 	/**
-	 * ±£´æÎÄ¼ş
+	 * ä¿å­˜æ–‡ä»¶
 	 */
 	public void saveDoc();
 	
 	/**
-	 * ±£´æÎÄ¼ş
+	 * ä¿å­˜æ–‡ä»¶
 	 */
 	public void saveDoc(String encoding);
 	
 	/**
-	 * ĞÂ½¨ÎÄ¼ş
+	 * æ–°å»ºæ–‡ä»¶
 	 * @param title
 	 */
 	public void newDoc(String title);
 	
 	/**
-	 * ÏÔÊ¾´ò¿ªÎÄ¼ş¶Ô»°¿ò
+	 * æ˜¾ç¤ºæ‰“å¼€æ–‡ä»¶å¯¹è¯æ¡†
 	 * @return
 	 */
 	public File showOpenDialog();

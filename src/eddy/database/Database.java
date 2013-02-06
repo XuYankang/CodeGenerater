@@ -11,7 +11,7 @@ import java.util.Map;
 import eddy.log.DebugLogger;
 
 /**
- * Êı¾İ¿âDAO´¦Àí
+ * æ•°æ®åº“DAOå¤„ç†
  * @author Eddy
  *
  */
@@ -24,25 +24,25 @@ public abstract class Database {
 	}
 	
 	/**
-	 * µÃµ½Êı¾İ¿âµÄËùÓĞ±íÃû
+	 * å¾—åˆ°æ•°æ®åº“çš„æ‰€æœ‰è¡¨å
 	 * @return
 	 */
 	public abstract ArrayList<DatabaseTable> getAllDatabaseTables();
 	
 	/**
-	 * µÃµ½±íµÄ×Ö¶ÎµÄ±¸×¢ĞÅÏ¢
+	 * å¾—åˆ°è¡¨çš„å­—æ®µçš„å¤‡æ³¨ä¿¡æ¯
 	 * @return
 	 */
 	public abstract Map<String, String> getTableColumnsComments(String tableName);
 	
 	
 	/**
-	 * µÃµ½±íµÄËùÓĞÁĞÃû³Æ
+	 * å¾—åˆ°è¡¨çš„æ‰€æœ‰åˆ—åç§°
 	 * @param tableName
 	 * @return
 	 */
 	public ArrayList<DatebaseColumn> getTableColumns(String tableName) {
-		//FIXME È·¶¨×ÔÔöÁĞµÄ´¦Àí
+		//FIXME ç¡®å®šè‡ªå¢åˆ—çš„å¤„ç†
 		ArrayList<DatebaseColumn> tableColumnList = new ArrayList<DatebaseColumn>();
 		try {
 			Connection connection = DBManager.getDBManager().getDBConnection(dbConnect);

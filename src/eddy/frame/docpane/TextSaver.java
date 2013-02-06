@@ -12,7 +12,7 @@ import javax.swing.text.Document;
 import javax.swing.text.Segment;
 
 /**
- * 文本文件保存,注意存储格式
+ * 鏂囨湰鏂囦欢淇濆瓨,娉ㄦ剰瀛樺偍鏍煎紡
  * @author Eddy
  *
  */
@@ -23,7 +23,7 @@ public class TextSaver extends Thread {
 	private String encoding = "";
 	
 	/**
-	 * 默认以UTF-8格式存储
+	 * 榛樿浠TF-8鏍煎紡瀛樺偍
 	 * @param f
 	 * @param doc
 	 * @param saveOver

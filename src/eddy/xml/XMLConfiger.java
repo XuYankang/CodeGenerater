@@ -20,9 +20,9 @@ import org.w3c.dom.NodeList;
 
 public class XMLConfiger {
 	private DocumentBuilder builder = null;
-	private XPath path;//XPathÀ´»ñµÃËùĞèÒªµÄ×Ö¶Î
+	private XPath path;//XPathæ¥è·å¾—æ‰€éœ€è¦çš„å­—æ®µ
 	private Document document = null;
-	private String filePath;//XMLÅäÖÃÎÄ¼şÂ·¾¶
+	private String filePath;//XMLé…ç½®æ–‡ä»¶è·¯å¾„
 	
 	@SuppressWarnings("deprecation")
 	public XMLConfiger(String filepath) {
@@ -53,15 +53,15 @@ public class XMLConfiger {
 	}
 	
 	/**
-	 * ÓÉxpath±í´ïÊ½µÃµ½½áµã»òÊôĞÔµÄÖµ<br>
-	 * ÊäÈëxpath±í´ïÊ½£¬Èç£º<br>
-	 * Àı1./configuration/DfkyBox/CommSet/CommName<br>
-	 *     ±íÊ¾½áµãCommName<br>
-	 * Àı2. /sqlMapConfig/transactionManager/dataSource/property[1]/@value <br>
-	 *     property[1]:±íÊ¾½áµãdataSourceÏÂµÄµÚÒ»¸öproperty½áµã£¬´Ó1¿ªÊ¼<br>
-	 *     "@value":±íÊ¾property½áµãµÄvalueÊôĞÔ
-	 * @param nodePath ½áµãÂ·¾¶£¬Èç£º/configuration/DfkyBox/CommSet/CommName
-	 * @return xpath±í´ïÊ½µÄÖµ
+	 * ç”±xpathè¡¨è¾¾å¼å¾—åˆ°ç»“ç‚¹æˆ–å±æ€§çš„å€¼<br>
+	 * è¾“å…¥xpathè¡¨è¾¾å¼ï¼Œå¦‚ï¼š<br>
+	 * ä¾‹1./configuration/DfkyBox/CommSet/CommName<br>
+	 *     è¡¨ç¤ºç»“ç‚¹CommName<br>
+	 * ä¾‹2. /sqlMapConfig/transactionManager/dataSource/property[1]/@value <br>
+	 *     property[1]:è¡¨ç¤ºç»“ç‚¹dataSourceä¸‹çš„ç¬¬ä¸€ä¸ªpropertyç»“ç‚¹ï¼Œä»1å¼€å§‹<br>
+	 *     "@value":è¡¨ç¤ºpropertyç»“ç‚¹çš„valueå±æ€§
+	 * @param nodePath ç»“ç‚¹è·¯å¾„ï¼Œå¦‚ï¼š/configuration/DfkyBox/CommSet/CommName
+	 * @return xpathè¡¨è¾¾å¼çš„å€¼
 	 */
 	public String getNodeValue(String nodePath) {
 		Node node = null;
@@ -74,7 +74,7 @@ public class XMLConfiger {
 	}
 	
 	/**
-	 * ·µ»Ø×Ó½áµãÁĞ±í£¬Èç¹û½áµãÎª¿Õ£¬Ôò·´»Ø¿Õ
+	 * è¿”å›å­ç»“ç‚¹åˆ—è¡¨ï¼Œå¦‚æœç»“ç‚¹ä¸ºç©ºï¼Œåˆ™åå›ç©º
 	 * @param nodePath
 	 * @return
 	 * @throws Exception
@@ -93,7 +93,7 @@ public class XMLConfiger {
 	}
 	
 	/**
-	 * µÃµ½½áµã£¬²»´æÔÚÊ±·µ»Ø¿Õ
+	 * å¾—åˆ°ç»“ç‚¹ï¼Œä¸å­˜åœ¨æ—¶è¿”å›ç©º
 	 * @param nodePath
 	 * @return
 	 * @throws Exception
@@ -108,8 +108,8 @@ public class XMLConfiger {
 	}
 	
 	/**
-	 * µÃµ½½áµãµÄÖµ
-	 * @param tagName ½áµãÃû£¬ÓÃÕâ¸ö·½·¨Ê±Òª±£Ö¤XMLÎÄ¼şµÄ½áµãÃûÊÇÎ¨Ò»µÄ£¬²»È»Ò²Ğí»áµÃ²»µ½ÄãÏëÒªµÄÊı¾İ
+	 * å¾—åˆ°ç»“ç‚¹çš„å€¼
+	 * @param tagName ç»“ç‚¹åï¼Œç”¨è¿™ä¸ªæ–¹æ³•æ—¶è¦ä¿è¯XMLæ–‡ä»¶çš„ç»“ç‚¹åæ˜¯å”¯ä¸€çš„ï¼Œä¸ç„¶ä¹Ÿè®¸ä¼šå¾—ä¸åˆ°ä½ æƒ³è¦çš„æ•°æ®
 	 * @return
 	 */
 	public String getTagValue(String tagName) {
@@ -128,10 +128,10 @@ public class XMLConfiger {
 	}
 	
 	/**
-	 * ÉèÖÃ½áµãµÄÖµ£¬µ±½áµãÃûÎªÎ¨Ò»Ê±¿ÉÒÔÓÃÕâ¸ö·½·¨
-	 * @param tagName ½áµãÃû
-	 * @param value ½áµãÖµ
-	 * @param isSave ÊÇ·ñ±£´æ
+	 * è®¾ç½®ç»“ç‚¹çš„å€¼ï¼Œå½“ç»“ç‚¹åä¸ºå”¯ä¸€æ—¶å¯ä»¥ç”¨è¿™ä¸ªæ–¹æ³•
+	 * @param tagName ç»“ç‚¹å
+	 * @param value ç»“ç‚¹å€¼
+	 * @param isSave æ˜¯å¦ä¿å­˜
 	 */
 	public void updateNodeValue(String tagName, String value, boolean isSave) {
 		NodeList nodelist = document.getElementsByTagNameNS("*", tagName);
@@ -144,20 +144,20 @@ public class XMLConfiger {
 	}
 	
 	/**
-	 * ¸üĞÂÂ·¾¶´¦½áµãµÄÖµ,Â·¾¶¾ÍÊÇXPath±í´ïÊ½£¬¿ÉÒÔÓÃ¸Ã·½·¨ĞŞ¸Ä½áµãµÄÖµÒÔ¼°½áµãµÄÊôĞÔÖµµÈ<br>
-	 * ¸Ã·½·¨²»±£´æĞŞ¸ÄĞÅÏ¢£¬ÈçÒª±£´æĞèÒªµ÷ÓÃsaveConfiger()·½·¨
-	 * @param nodePath XPath±í´ïÊ½
-	 * @param value ĞÂÖµ
+	 * æ›´æ–°è·¯å¾„å¤„ç»“ç‚¹çš„å€¼,è·¯å¾„å°±æ˜¯XPathè¡¨è¾¾å¼ï¼Œå¯ä»¥ç”¨è¯¥æ–¹æ³•ä¿®æ”¹ç»“ç‚¹çš„å€¼ä»¥åŠç»“ç‚¹çš„å±æ€§å€¼ç­‰<br>
+	 * è¯¥æ–¹æ³•ä¸ä¿å­˜ä¿®æ”¹ä¿¡æ¯ï¼Œå¦‚è¦ä¿å­˜éœ€è¦è°ƒç”¨saveConfiger()æ–¹æ³•
+	 * @param nodePath XPathè¡¨è¾¾å¼
+	 * @param value æ–°å€¼
 	 */
 	public void updateAbsoluteNodeValue(String nodePath, String value) {
 		this.updateAbsoluteNodeValue(nodePath, value, false);
 	}
 	
 	/**
-	 * ¸üĞÂÂ·¾¶´¦½áµãµÄÖµ,Â·¾¶¾ÍÊÇXPath±í´ïÊ½£¬¿ÉÒÔÓÃ¸Ã·½·¨ĞŞ¸Ä½áµãµÄÖµÒÔ¼°½áµãµÄÊôĞÔÖµµÈ
-	 * @param nodePath XPath±í´ïÊ½
-	 * @param value ĞÂÖµ
-	 * @param isSave ÊÇ·ñ±£´æ
+	 * æ›´æ–°è·¯å¾„å¤„ç»“ç‚¹çš„å€¼,è·¯å¾„å°±æ˜¯XPathè¡¨è¾¾å¼ï¼Œå¯ä»¥ç”¨è¯¥æ–¹æ³•ä¿®æ”¹ç»“ç‚¹çš„å€¼ä»¥åŠç»“ç‚¹çš„å±æ€§å€¼ç­‰
+	 * @param nodePath XPathè¡¨è¾¾å¼
+	 * @param value æ–°å€¼
+	 * @param isSave æ˜¯å¦ä¿å­˜
 	 */
 	public void updateAbsoluteNodeValue(String nodePath, String value, boolean isSave) {
 		try {

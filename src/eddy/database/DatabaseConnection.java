@@ -1,7 +1,7 @@
 package eddy.database;
 
 /**
- * Êı¾İ¿âÁ¬½Ó¶ÔÏó
+ * æ•°æ®åº“è¿æ¥å¯¹è±¡
  * @author Eddy
  *
  */

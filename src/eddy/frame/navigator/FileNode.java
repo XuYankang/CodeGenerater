@@ -5,7 +5,7 @@ import java.io.File;
 import javax.swing.tree.DefaultMutableTreeNode;
 
 /**
- * ÎÄ¼þ½áµãÀà
+ * æ–‡ä»¶ç»“ç‚¹ç±»
  * @author Eddy
  *
  */
@@ -29,7 +29,7 @@ public class FileNode {
 	}
 
 	/**
-	 * Õ¹¿ªÊ÷½áµã
+	 * å±•å¼€æ ‘ç»“ç‚¹
 	 * @param treeNode
 	 */
 	public boolean expand(DefaultMutableTreeNode parentNode) {
@@ -46,7 +46,7 @@ public class FileNode {
 			
 			File[] subfilelist = filelist[k].listFiles();
 			if(subfilelist != null) {
-				node.add(new DefaultMutableTreeNode("ÕýÔÚ¼ÓÔØ"));
+				node.add(new DefaultMutableTreeNode("æ­£åœ¨åŠ è½½"));
 			}
 		}
 		

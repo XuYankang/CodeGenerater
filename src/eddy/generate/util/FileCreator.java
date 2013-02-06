@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
-import java.io.OutputStreamWriter;
 
 import org.dom4j.Document;
 import org.dom4j.io.OutputFormat;
@@ -15,9 +14,9 @@ import eddy.frame.docpane.TextFileOperator;
 public class FileCreator {
 	
 	/**
-	 * Éú³ÉJAVAÀà
-	 * @param classFileName È«ÏŞ¶¨ÀàÃû
-	 * @param dirPath Ô´ÎÄ¼ş¼ĞÂ·¾¶£¨×îºó²»ÓÃ´ø/£©
+	 * ç”ŸæˆJAVAç±»
+	 * @param classFileName å…¨é™å®šç±»å
+	 * @param dirPath æºæ–‡ä»¶å¤¹è·¯å¾„ï¼ˆæœ€åä¸ç”¨å¸¦/ï¼‰
 	 * @throws IOException
 	 */
 	public static File createJavaFile(String classFileName, String dirPath) throws IOException {
@@ -39,10 +38,10 @@ public class FileCreator {
 	}
 	
 	/**
-	 * Éú³ÉJAVAÀà
-	 * @param classFileName È«ÏŞ¶¨ÀàÃû
-	 * @param dirPath Ô´ÎÄ¼ş¼ĞÂ·¾¶£¨×îºó²»ÓÃ´ø/£©
-	 * @param context ÎÄ¼şÄÚÈİ
+	 * ç”ŸæˆJAVAç±»
+	 * @param classFileName å…¨é™å®šç±»å
+	 * @param dirPath æºæ–‡ä»¶å¤¹è·¯å¾„ï¼ˆæœ€åä¸ç”¨å¸¦/ï¼‰
+	 * @param context æ–‡ä»¶å†…å®¹
 	 * @throws IOException
 	 */
 	public static File createJavaFile(String classFileName, String dirPath, String context) throws IOException {
@@ -53,17 +52,17 @@ public class FileCreator {
 	}
 	
 	/**
-	 * DOM4J±£´æXMLÎÄ¼ş
-	 * @param doc Document¶ÔÏó
-	 * @param filePath xmlÎÄ¼şÍêÕûÂ·¾¶
+	 * DOM4Jä¿å­˜XMLæ–‡ä»¶
+	 * @param doc Documentå¯¹è±¡
+	 * @param filePath xmlæ–‡ä»¶å®Œæ•´è·¯å¾„
 	 * @throws Exception
 	 */
 	public static void saveXmlDoc(Document doc, String filePath) throws Exception {
 		OutputFormat fmt = new OutputFormat();
 		fmt.setEncoding("utf-8");
-		fmt.setIndent(true); //ÉèÖÃÊÇ·ñËõ½ø
-		fmt.setIndent("\t"); //ÒÔ¿Õ¸ñ·½Ê½ÊµÏÖËõ½ø
-		fmt.setNewlines(true); //ÉèÖÃÊÇ·ñ»»ĞĞ
+		fmt.setIndent(true); //è®¾ç½®æ˜¯å¦ç¼©è¿›
+		fmt.setIndent("\t"); //ä»¥ç©ºæ ¼æ–¹å¼å®ç°ç¼©è¿›
+		fmt.setNewlines(true); //è®¾ç½®æ˜¯å¦æ¢è¡Œ
 //		
 		XMLWriter writer = new XMLWriter(fmt);
 		OutputStream out = new FileOutputStream(filePath);

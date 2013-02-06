@@ -10,7 +10,7 @@ public class DatebaseColumn {
 	private String columnLabel = "";
 	private String comment = "";
 	private int isNull = 0;
-	private boolean isPrimaryKey = false;//ÊÇ·ñÊÇÖ÷¼ü
+	private boolean isPrimaryKey = false;
 
 	public boolean isPrimaryKey() {
 		return isPrimaryKey;

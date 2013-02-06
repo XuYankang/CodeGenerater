@@ -10,14 +10,14 @@ import eddy.generate.javaclass.JavaClass;
 public interface IBatisGenerator {
 	
 	/**
-	 * Ìí¼Óµ½ÅäÖÃÎÄ¼ş
+	 * æ·»åŠ åˆ°é…ç½®æ–‡ä»¶
 	 * @param projectPath
 	 * @param resourceFilePath
 	 */
 	void addResourceToSqlMapFile(String projectPath, String resourceFilePath);
 	
 	/**
-	 * Éú³ÉSQLÎÄ¼ş
+	 * ç”ŸæˆSQLæ–‡ä»¶
 	 * @param ibatsiConfig
 	 * @param className
 	 * @param dbTable

@@ -51,7 +51,7 @@ public class ClassGenerator {
 
 			if(jc.getComment() != null && !jc.getComment().trim().equals("")) {
 				strbuf.append("\t/**\n");
-				strbuf.append("\t* µÃµ½ " + jc.getComment() + "\n");
+				strbuf.append("\t* å¾—åˆ° " + jc.getComment() + "\n");
 				strbuf.append("\t* @return " + jc.getComment() + " : " + fieldClass  + "\n");
 				strbuf.append("\t*/\n");
 			}
@@ -63,7 +63,7 @@ public class ClassGenerator {
 			
 			if(jc.getComment() != null && !jc.getComment().trim().equals("")) {
 				strbuf.append("\t/**\n");
-				strbuf.append("\t * ÉèÖÃ " + jc.getComment() + "\n");
+				strbuf.append("\t * è®¾ç½® " + jc.getComment() + "\n");
 				strbuf.append("\t * @param " + fieldName + ", " + jc.getComment() + " : " + fieldClass + "\n");
 				strbuf.append("\t*/\n");
 			}
@@ -79,9 +79,9 @@ public class ClassGenerator {
 	}
 	
 	/**
-	 * Éú³ÉJAVAÀà
-	 * @param className ÀàÃû
-	 * @param tableColumnList Êı¾İ¿â×ÖÌåÁĞ±í
+	 * ç”ŸæˆJAVAç±»
+	 * @param className ç±»å
+	 * @param tableColumnList æ•°æ®åº“å­—ä½“åˆ—è¡¨
 	 * @return
 	 */
 	public static String generateClassFromDateBaseColumns(String className, ArrayList<DatebaseColumn> tableColumnList) {
@@ -117,7 +117,7 @@ public class ClassGenerator {
 	}
 	
 	/**
-	 * Éú³ÉÊµÌåÀà
+	 * ç”Ÿæˆå®ä½“ç±»
 	 * @param className
 	 * @param selectFileNodePath
 	 * @param jclist
@@ -131,7 +131,7 @@ public class ClassGenerator {
 	}
 	
 	/**
-	 * Éú³ÉDAO²ã
+	 * ç”ŸæˆDAOå±‚
 	 * @param ibatsiConfig
 	 * @param etyClassName
 	 * @param projectPath

@@ -3,8 +3,8 @@ package eddy.generate.util;
 public class JavaClassUtil {
 	
 	/**
-	 * µÃµ½ÀàÃû³Æ
-	 * @param classFullName ÀàµÄÈ«ÏŞ¶¨Ãû³Æ
+	 * å¾—åˆ°ç±»åç§°
+	 * @param classFullName ç±»çš„å…¨é™å®šåç§°
 	 * @return
 	 */
 	public static String getClassName(String classFullName) {
@@ -24,7 +24,7 @@ public class JavaClassUtil {
 	}
 	
 	/**
-	 * µÃµ½ÀàµÄÊµÀıÃû³Æ(Ä¬ÈÏÎªÀàÃû³Æ¿ªÍ·Ğ¡Ğ´)
+	 * å¾—åˆ°ç±»çš„å®ä¾‹åç§°(é»˜è®¤ä¸ºç±»åç§°å¼€å¤´å°å†™)
 	 * @param classFullName
 	 * @return
 	 */

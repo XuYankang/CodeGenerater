@@ -12,14 +12,14 @@ import javax.swing.text.TabSet;
 import javax.swing.text.TabStop;
 
 /**
- * ´ò¿ªºÍĞÂ½¨µÄÎÄµµÀà
+ * æ‰“å¼€å’Œæ–°å»ºçš„æ–‡æ¡£ç±»
  * @author Eddy
  *
  */
 public class EditTextPane {
-	private String filePath;//ÎÄ¼şÂ·¾¶
-	private String fileName;//ÎÄ¼şÃû³Æ
-	private JTextPane textpane;//ÏÔÊ¾µÄJTextPane
+	private String filePath;//æ–‡ä»¶è·¯å¾„
+	private String fileName;//æ–‡ä»¶åç§°
+	private JTextPane textpane;//æ˜¾ç¤ºçš„JTextPane
 	private boolean neddSave = false;
 	
 	public EditTextPane(String filePath, String fileName, JTextPane textpane, boolean neddSave) {
@@ -30,19 +30,19 @@ public class EditTextPane {
 	}
 	
 	/**
-	 * ÅĞ¶ÏÎÄ¼şÊÇ·ñĞèÒª±£´æ
-	 * @return 0:±£´æ£¬1£º²»±£´æ, 2£ºÈ¡Ïû
+	 * åˆ¤æ–­æ–‡ä»¶æ˜¯å¦éœ€è¦ä¿å­˜
+	 * @return 0:ä¿å­˜ï¼Œ1ï¼šä¸ä¿å­˜, 2ï¼šå–æ¶ˆ
 	 */
 	public int canClose() {
 		if(!neddSave)
 			return 1;
 		
-		int ret = JOptionPane.showConfirmDialog(textpane, "ÊÇ·ñĞèÒª±£´æ?", "ÌáÊ¾", JOptionPane.YES_NO_CANCEL_OPTION);
+		int ret = JOptionPane.showConfirmDialog(textpane, "æ˜¯å¦éœ€è¦ä¿å­˜?", "æç¤º", JOptionPane.YES_NO_CANCEL_OPTION);
 		return ret;
 	}
 	
 	/**
-	 * ±£´æÎÄ¼ş
+	 * ä¿å­˜æ–‡ä»¶
 	 */
 	public void saveDoc() {
 		saveDoc("UTF-8");
@@ -65,7 +65,7 @@ public class EditTextPane {
 	}
 	
 	/**
-	 * ÉèÖÃÎÄµµÖĞTab¼üµÄ¿í¶È
+	 * è®¾ç½®æ–‡æ¡£ä¸­Tabé”®çš„å®½åº¦
 	 * @param charactersPerTab
 	 */
 	public void setTabs(int charactersPerTab) {

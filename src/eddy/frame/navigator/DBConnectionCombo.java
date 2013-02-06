@@ -27,7 +27,7 @@ public class DBConnectionCombo extends JComboBox {
 
 		this.addItem("new...");
 
-		this.addActionListener(new ActionListener() {// 更改数据连接
+		this.addActionListener(new ActionListener() {// 鏇存敼鏁版嵁杩炴帴
 			public void actionPerformed(ActionEvent e) {
 				try {
 					Object selObj = getSelectedItem();

@@ -20,12 +20,12 @@ import org.xml.sax.InputSource;
 
 public class XMLReader {
 	private DocumentBuilder builder = null;
-	private XPath path;//XPathÀ´»ñµÃËùĞèÒªµÄ×Ö¶Î
+	private XPath path;//XPathæ¥è·å¾—æ‰€éœ€è¦çš„å­—æ®µ
 	private Document document = null;
 	
 	/**
-	 * ¹¹ÔìXmlReader
-	 * @param xmlData xml¸ñÊ½µÄ×Ö·û´®
+	 * æ„é€ XmlReader
+	 * @param xmlData xmlæ ¼å¼çš„å­—ç¬¦ä¸²
 	 */
 	public XMLReader(String xmlData) {
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -43,8 +43,8 @@ public class XMLReader {
 	}
 	
 	/**
-	 * ¹¹ÔìXmlReader
-	 * @param data xml×Ö½ÚÊı¾İ
+	 * æ„é€ XmlReader
+	 * @param data xmlå­—èŠ‚æ•°æ®
 	 */
 	public XMLReader(byte[] data) {
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -60,8 +60,8 @@ public class XMLReader {
 	}
 	
 	/**
-	 * ¹¹ÔìXmlReader
-	 * @param file xmlÎÄ¼ş
+	 * æ„é€ XmlReader
+	 * @param file xmlæ–‡ä»¶
 	 */
 	public XMLReader(File file) {
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -79,15 +79,15 @@ public class XMLReader {
 	}
 	
 	/**
-	 * ÓÉxpath±í´ïÊ½µÃµ½½áµã»òÊôĞÔµÄÖµ<br>
-	 * ÊäÈëxpath±í´ïÊ½£¬Èç£º<br>
-	 * Àı1./configuration/DfkyBox/CommSet/CommName<br>
-	 *     ±íÊ¾½áµãCommName<br>
-	 * Àı2. /sqlMapConfig/transactionManager/dataSource/property[1]/@value <br>
-	 *     property[1]:±íÊ¾½áµãdataSourceÏÂµÄµÚÒ»¸öproperty½áµã£¬´Ó1¿ªÊ¼<br>
-	 *     "@value":±íÊ¾property½áµãµÄvalueÊôĞÔ
-	 * @param nodePath ½áµãÂ·¾¶£¬Èç£º/configuration/DfkyBox/CommSet/CommName
-	 * @return xpath±í´ïÊ½µÄÖµ
+	 * ç”±xpathè¡¨è¾¾å¼å¾—åˆ°ç»“ç‚¹æˆ–å±æ€§çš„å€¼<br>
+	 * è¾“å…¥xpathè¡¨è¾¾å¼ï¼Œå¦‚ï¼š<br>
+	 * ä¾‹1./configuration/DfkyBox/CommSet/CommName<br>
+	 *     è¡¨ç¤ºç»“ç‚¹CommName<br>
+	 * ä¾‹2. /sqlMapConfig/transactionManager/dataSource/property[1]/@value <br>
+	 *     property[1]:è¡¨ç¤ºç»“ç‚¹dataSourceä¸‹çš„ç¬¬ä¸€ä¸ªpropertyç»“ç‚¹ï¼Œä»1å¼€å§‹<br>
+	 *     "@value":è¡¨ç¤ºpropertyç»“ç‚¹çš„valueå±æ€§
+	 * @param nodePath ç»“ç‚¹è·¯å¾„ï¼Œå¦‚ï¼š/configuration/DfkyBox/CommSet/CommName
+	 * @return xpathè¡¨è¾¾å¼çš„å€¼
 	 */
 	public String getNodeValue(String nodePath) {
 		Node node = null;
@@ -100,7 +100,7 @@ public class XMLReader {
 	}
 	
 	/**
-	 * ·µ»Ø×Ó½áµãÁĞ±í£¬Èç¹û½áµãÎª¿Õ£¬Ôò·´»Ø¿Õ
+	 * è¿”å›å­ç»“ç‚¹åˆ—è¡¨ï¼Œå¦‚æœç»“ç‚¹ä¸ºç©ºï¼Œåˆ™åå›ç©º
 	 * @param nodePath
 	 * @return
 	 * @throws Exception
@@ -115,7 +115,7 @@ public class XMLReader {
 	}
 	
 	/**
-	 * µÃµ½½áµã£¬²»´æÔÚÊ±·µ»Ø¿Õ
+	 * å¾—åˆ°ç»“ç‚¹ï¼Œä¸å­˜åœ¨æ—¶è¿”å›ç©º
 	 * @param nodePath
 	 * @return
 	 * @throws Exception
@@ -130,8 +130,8 @@ public class XMLReader {
 	}
 	
 	/**
-	 * µÃµ½½áµãµÄÖµ
-	 * @param tagName ½áµãÃû£¬ÓÃÕâ¸ö·½·¨Ê±Òª±£Ö¤XMLÎÄ¼şµÄ½áµãÃûÊÇÎ¨Ò»µÄ£¬²»È»Ò²Ğí»áµÃ²»µ½ÄãÏëÒªµÄÊı¾İ
+	 * å¾—åˆ°ç»“ç‚¹çš„å€¼
+	 * @param tagName ç»“ç‚¹åï¼Œç”¨è¿™ä¸ªæ–¹æ³•æ—¶è¦ä¿è¯XMLæ–‡ä»¶çš„ç»“ç‚¹åæ˜¯å”¯ä¸€çš„ï¼Œä¸ç„¶ä¹Ÿè®¸ä¼šå¾—ä¸åˆ°ä½ æƒ³è¦çš„æ•°æ®
 	 * @return
 	 */
 	public String getTagValue(String tagName) {

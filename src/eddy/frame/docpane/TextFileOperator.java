@@ -12,7 +12,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
 /**
- * ÎÄ±¾ÎÄ¼ş²Ù×÷Àà
+ * æ–‡æœ¬æ–‡ä»¶æ“ä½œç±»
  * @author Eddy
  *
  */
@@ -20,8 +20,8 @@ public class TextFileOperator {
 	
 	/**
 	 * 
-	 * @param toFile Ğ´ÈëµÄÎÄ¼ş
-	 * @param info ĞÅÏ¢ Ä¬ÈÏÒÔUTF-8¸ñÊ½´æ´¢
+	 * @param toFile å†™å…¥çš„æ–‡ä»¶
+	 * @param info ä¿¡æ¯ é»˜è®¤ä»¥UTF-8æ ¼å¼å­˜å‚¨
 	 * @throws IOException
 	 */
 	public void writeToFile(File toFile, String info) throws IOException {
@@ -33,9 +33,9 @@ public class TextFileOperator {
 	
 	/**
 	 * 
-	 * @param toFile Ğ´ÈëµÄÎÄ¼ş
-	 * @param info ĞÅÏ¢
-	 * @param encoding ±àÂë·½Ê½
+	 * @param toFile å†™å…¥çš„æ–‡ä»¶
+	 * @param info ä¿¡æ¯
+	 * @param encoding ç¼–ç æ–¹å¼
 	 * @throws IOException
 	 */
 	public void writeToFile(File toFile, String info, String encoding) throws IOException {
@@ -46,7 +46,7 @@ public class TextFileOperator {
 	}
 	
 	/**
-	 * ¶ÁÈ¡ÎÄ¼ş
+	 * è¯»å–æ–‡ä»¶
 	 * @param fromFile
 	 * @return
 	 * @throws Exception
@@ -63,9 +63,9 @@ public class TextFileOperator {
 	}
 	
 	/**
-	 * ¿½±´ÎÄ±¾ÎÄ¼ş
-	 * @param fromFile Ô´ÎÄ¼ş
-	 * @param toFile Ä¿±êÎÄ¼ş
+	 * æ‹·è´æ–‡æœ¬æ–‡ä»¶
+	 * @param fromFile æºæ–‡ä»¶
+	 * @param toFile ç›®æ ‡æ–‡ä»¶
 	 * @throws Exception
 	 */
 	public void copyFile(File fromFile, File toFile) throws Exception {
@@ -93,9 +93,9 @@ public class TextFileOperator {
 	}
 	
 	/**
-	 * ¿½±´ÎÄ±¾ÎÄ¼ş
-	 * @param fromFile Ô´ÎÄ¼ş
-	 * @param toFile Ä¿±êÎÄ¼ş
+	 * æ‹·è´æ–‡æœ¬æ–‡ä»¶
+	 * @param fromFile æºæ–‡ä»¶
+	 * @param toFile ç›®æ ‡æ–‡ä»¶
 	 * @throws Exception
 	 */
 	public void copyFile(BufferedReader reader, BufferedWriter writer) throws Exception {

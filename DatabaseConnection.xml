@@ -8,6 +8,12 @@
 	</connection>
 	<connection>
 		<DriverName>com.mysql.jdbc.Driver</DriverName>
+		<url>jdbc:mysql://127.0.0.1:3306/dtcms?useUnicode=true&amp;characterEncoding=utf8</url>
+		<UserName>root</UserName>
+		<Password>123</Password>
+	</connection>
+	<connection>
+		<DriverName>com.mysql.jdbc.Driver</DriverName>
 		<url>jdbc:mysql://127.0.0.1:3306/eddyms?useUnicode=true&amp;characterEncoding=GBK</url>
 		<UserName>root</UserName>
 		<Password>123</Password>

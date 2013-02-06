@@ -10,7 +10,7 @@ import javax.swing.JTabbedPane;
 import resources.Resources;
 
 /**
- * ×ó±ßµÄµ¼º½Ãæ°å
+ * å·¦è¾¹çš„å¯¼èˆªé¢æ¿
  * 
  * @author Eddy
  * 
@@ -37,7 +37,7 @@ public class NavigatorPane {
 	}
 
 	/**
-	 * ÏÔÊ¾ÎÄ¼ş×ÊÔ´Ê÷
+	 * æ˜¾ç¤ºæ–‡ä»¶èµ„æºæ ‘
 	 */
 	public void showFileTree() {
 		JPanel pane = new JPanel();
@@ -51,7 +51,7 @@ public class NavigatorPane {
 	}
 
 	/**
-	 * ÏÔÊ¾ÓÃ»§ÏîÄ¿Ê÷
+	 * æ˜¾ç¤ºç”¨æˆ·é¡¹ç›®æ ‘
 	 */
 	public void showProjectTree() {
 		JPanel pane = new JPanel();

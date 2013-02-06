@@ -9,7 +9,7 @@ public class ActionGenerator_Spring implements ActionGenerator {
 	private WebModelGenerateAssistant generateAssistant;
 	private String projectPath;
 	
-	private String actionClassName;//ActionÀàÃû³Æ
+	private String actionClassName;//Actionç±»åç§°
 	private String actionClassFullName;
 	private String requestMapping;
 	
@@ -26,7 +26,7 @@ public class ActionGenerator_Spring implements ActionGenerator {
 	}
 
 	/**
-	 * Éú³ÉAction
+	 * ç”ŸæˆAction
 	 * @param generateAssistant
 	 */
 	public void generateAction() {
@@ -96,7 +96,7 @@ public class ActionGenerator_Spring implements ActionGenerator {
 	}
 	
 	/**
-	 * Éú³É²éÑ¯·½·¨
+	 * ç”ŸæˆæŸ¥è¯¢æ–¹æ³•
 	 * @param fileStrBuf
 	 */
 	private void generateSearchMethod(StringBuffer fileStrBuf) {
@@ -131,7 +131,7 @@ public class ActionGenerator_Spring implements ActionGenerator {
 		fileStrBuf.append("\t\tobj.put(\"success\",true);\n");
 		
 		fileStrBuf.append("\t\t");
-		fileStrBuf.append("if(" + entityInstanceName + ".getId() == null) {\n");//FIXME ĞèÒªÈ¡Òş²ØÊôĞÔ£¬¶ø²»ÊÇÖ¸¶¨µÄid
+		fileStrBuf.append("if(" + entityInstanceName + ".getId() == null) {\n");//FIXME éœ€è¦å–éšè—å±æ€§ï¼Œè€Œä¸æ˜¯æŒ‡å®šçš„id
 		fileStrBuf.append("\t\t\t" + daoInstanceName + ".insert(" + entityInstanceName + ");\n");
 		fileStrBuf.append("\t\t} else { \n");
 		fileStrBuf.append("\t\t\t" + daoInstanceName + ".updateById(" + entityInstanceName + ");\n");
@@ -182,6 +182,6 @@ public class ActionGenerator_Spring implements ActionGenerator {
 		fileStrBuf.append("\n\t\treturn obj.toString();");
 		fileStrBuf.append("\n\t}\n");
 	}
-	//FIXME Éú³Éµ¼³ö·½·¨
+	//FIXME ç”Ÿæˆå¯¼å‡ºæ–¹æ³•
 	
 }

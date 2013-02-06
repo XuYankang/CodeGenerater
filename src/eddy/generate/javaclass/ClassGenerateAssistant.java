@@ -40,7 +40,7 @@ import eddy.generate.config.ProjectConfig;
 import eddy.log.DebugLogger;
 
 /**
- * JavaÀàÎÄ¼şÉú³ÉÏòµ¼
+ * Javaç±»æ–‡ä»¶ç”Ÿæˆå‘å¯¼
  * 
  * @author Eddy
  * 
@@ -64,8 +64,8 @@ public class ClassGenerateAssistant {
 
 	private DefaultListModel stepListMode;
 
-	private JComboBox tablenameCombo = new JComboBox();// ±íÃûÁĞ±í
-	private JComboBox dbConnectionCombo = new JComboBox();// Êı¾İ¿âÁ¬½ÓÁĞ±í
+	private JComboBox tablenameCombo = new JComboBox();// è¡¨ååˆ—è¡¨
+	private JComboBox dbConnectionCombo = new JComboBox();// æ•°æ®åº“è¿æ¥åˆ—è¡¨
 
 	private JList availableColumns;
 	private DefaultListModel availableListMode;
@@ -79,12 +79,12 @@ public class ClassGenerateAssistant {
 
 	public ClassGenerateAssistant(JFrame parent) {
 		dialog = new JDialog(parent);
-		dialog.setTitle("´úÂëÉú³ÉÏòµ¼");
+		dialog.setTitle("ä»£ç ç”Ÿæˆå‘å¯¼");
 		this.parent = parent;
 		stepListMode = new DefaultListModel();
-		stepListMode.addElement("1.   Êı¾İ¿â¼°±íÑ¡Ôñ");
-		stepListMode.addElement("2.   ÀàÏêÏ¸ÉèÖÃ");
-		stepListMode.addElement("3.   ibatisÅäÖÃ");
+		stepListMode.addElement("1.   æ•°æ®åº“åŠè¡¨é€‰æ‹©");
+		stepListMode.addElement("2.   ç±»è¯¦ç»†è®¾ç½®");
+		stepListMode.addElement("3.   ibatisé…ç½®");
 		stepList = new JList(stepListMode);
 		stepList.setEnabled(false);
 		this.createOperatePane();
@@ -131,7 +131,7 @@ public class ClassGenerateAssistant {
 				} else if (index == 2) {
 					DatabaseTable dt = (DatabaseTable) tablenameCombo.getSelectedItem();
 					ArrayList<String> pklist = dt.getPrimaryKeys();
-					if (pklist.size() == 0) {// Ã»ÓĞÖ÷¼ü£¬²»ÄÜÉú³É²åÈëSQL
+					if (pklist.size() == 0) {// æ²¡æœ‰ä¸»é”®ï¼Œä¸èƒ½ç”Ÿæˆæ’å…¥SQL
 
 					}
 					
@@ -167,7 +167,7 @@ public class ClassGenerateAssistant {
 		}
 		dbConnectionCombo.addItem("new...");
 
-		dbConnectionCombo.addItemListener(new ItemListener() {// ¸ü¸ÄÊı¾İÁ¬½Ó
+		dbConnectionCombo.addItemListener(new ItemListener() {// æ›´æ”¹æ•°æ®è¿æ¥
 			@Override
 			public void itemStateChanged(ItemEvent e) {
 				if(e.getStateChange() != ItemEvent.SELECTED)
@@ -218,12 +218,12 @@ public class ClassGenerateAssistant {
 				}
 			}
 		});
-		dbConnectionCombo.setSelectedItem(defaultConnection);//ÉèÖÃÄ¬ÈÏÑ¡ÖĞ¼ÇÂ¼
+		dbConnectionCombo.setSelectedItem(defaultConnection);//è®¾ç½®é»˜è®¤é€‰ä¸­è®°å½•
 		dbConnectionCombo.setToolTipText(dbConnectionCombo.getSelectedItem().toString());
 	}
 
 	/**
-	 * ³õÊ¼»¯×ó±ßµÄ²½ÖèÌáÊ¾¿ò
+	 * åˆå§‹åŒ–å·¦è¾¹çš„æ­¥éª¤æç¤ºæ¡†
 	 */
 	private void initLeftPane() {
 		leftPane = new JPanel();
@@ -234,7 +234,7 @@ public class ClassGenerateAssistant {
 
 		p.setLayout(null);
 
-		JLabel lb = new JLabel("²½Öè");
+		JLabel lb = new JLabel("æ­¥éª¤");
 		lb.setFont(Resources.getResources().getSysFont_CN());
 		lb.setBounds(20, 10, 150, 20);
 		p.add(lb);
@@ -249,7 +249,7 @@ public class ClassGenerateAssistant {
 	}
 
 	/**
-	 * Éú³ÉÏÂ·½µÄ²Ù×÷°´Å¥£¬ºóÍË¡¢Ç°½øµÈ
+	 * ç”Ÿæˆä¸‹æ–¹çš„æ“ä½œæŒ‰é’®ï¼Œåé€€ã€å‰è¿›ç­‰
 	 */
 	private void createOperatePane() {
 		operatePane = new JPanel();
@@ -299,13 +299,13 @@ public class ClassGenerateAssistant {
 	}
 
 	/**
-	 * ³õÊ¼»¯Ñ¡ÔñÊı¾İ¿âÃæ°å
+	 * åˆå§‹åŒ–é€‰æ‹©æ•°æ®åº“é¢æ¿
 	 */
 	private void initDatabasePane() {
 		databasePane = new JPanel();
 		databasePane.setLayout(null);
 		databasePane.setBackground(new Color(236, 233, 216));
-		JLabel lb = new JLabel("1. Êı¾İ¿â¼°±íÑ¡Ôñ");
+		JLabel lb = new JLabel("1. æ•°æ®åº“åŠè¡¨é€‰æ‹©");
 		lb.setBounds(10, 10, 200, 20);
 		databasePane.add(lb);
 
@@ -313,14 +313,14 @@ public class ClassGenerateAssistant {
 		lb.setBounds(10, 20, 500, 40);
 		databasePane.add(lb);
 
-		lb = new JLabel("Êı¾İ¿âÁ¬½Ó");
+		lb = new JLabel("æ•°æ®åº“è¿æ¥");
 		lb.setBounds(10, 80, 100, 25);
 		databasePane.add(lb);
 
 		dbConnectionCombo.setBounds(100, 80, 400, 25);
 		databasePane.add(dbConnectionCombo);
 
-		lb = new JLabel("Ñ¡Ôñ±í");
+		lb = new JLabel("é€‰æ‹©è¡¨");
 		lb.setBounds(10, 120, 100, 25);
 		databasePane.add(lb);
 
@@ -350,7 +350,7 @@ public class ClassGenerateAssistant {
 
 		databasePane.add(tablenameCombo);
 
-		lb = new JLabel("¿ÉÑ¡ÔñÁĞ");
+		lb = new JLabel("å¯é€‰æ‹©åˆ—");
 		lb.setBounds(10, 160, 100, 20);
 		databasePane.add(lb);
 
@@ -362,7 +362,7 @@ public class ClassGenerateAssistant {
 		p.setBounds(10, 185, 200, 300);
 		databasePane.add(p);
 
-		lb = new JLabel("ÒÑÑ¡ÔñÁĞ");
+		lb = new JLabel("å·²é€‰æ‹©åˆ—");
 		lb.setBounds(300, 160, 100, 20);
 		databasePane.add(lb);
 
@@ -423,13 +423,13 @@ public class ClassGenerateAssistant {
 	}
 
 	/**
-	 * ³õÊ¼»¯ÀàÉèÖÃÃæ°å
+	 * åˆå§‹åŒ–ç±»è®¾ç½®é¢æ¿
 	 */
 	public void initClassSetPane() {
 		classSetPane = new JPanel();
 		classSetPane.setLayout(null);
 		classSetPane.setBackground(new Color(236, 233, 216));
-		JLabel lb = new JLabel("2. ÀàÏêÏ¸ÉèÖÃ");
+		JLabel lb = new JLabel("2. ç±»è¯¦ç»†è®¾ç½®");
 		lb.setFont(Resources.getResources().getSysFont_CN());
 		lb.setBounds(10, 10, 200, 20);
 		classSetPane.add(lb);
@@ -438,7 +438,7 @@ public class ClassGenerateAssistant {
 		lb.setBounds(10, 20, 500, 40);
 		classSetPane.add(lb);
 
-		lb = new JLabel("ÀàÃû³Æ£º");
+		lb = new JLabel("ç±»åç§°ï¼š");
 		lb.setFont(Resources.getResources().getSysFont_CN());
 		lb.setBounds(10, 60, 80, 25);
 		classSetPane.add(lb);
@@ -447,7 +447,7 @@ public class ClassGenerateAssistant {
 		classNameTxt.setFont(Resources.getResources().getSysFont_EN());
 		classSetPane.add(classNameTxt);
 
-		lb = new JLabel("ÀàÊôĞÔ¼°ÀàĞÍ");
+		lb = new JLabel("ç±»å±æ€§åŠç±»å‹");
 		lb.setFont(Resources.getResources().getSysFont_CN());
 		lb.setBounds(10, 100, 200, 20);
 		classSetPane.add(lb);
@@ -461,12 +461,12 @@ public class ClassGenerateAssistant {
 	}
 
 	/**
-	 * ³õÊ¼»¯ibatisÅäÖÃÃæ°å
+	 * åˆå§‹åŒ–ibatisé…ç½®é¢æ¿
 	 */
 	public void initIbatisSetPane() {
 		ibatisSetPane = new JPanel();
 		ibatisSetPane.setLayout(null);
-		JLabel lb = new JLabel("3. ibatisÅäÖÃ");
+		JLabel lb = new JLabel("3. ibatisé…ç½®");
 		lb.setFont(Resources.getResources().getSysFont_CN());
 		lb.setBounds(10, 10, 200, 20);
 		ibatisSetPane.add(lb);
@@ -476,7 +476,7 @@ public class ClassGenerateAssistant {
 	}
 
 	/**
-	 * ÏÔÊ¾Ïòµ¼¶Ô»°¿ò
+	 * æ˜¾ç¤ºå‘å¯¼å¯¹è¯æ¡†
 	 * 
 	 * @return
 	 */
@@ -506,7 +506,7 @@ public class ClassGenerateAssistant {
 	}
 
 	/**
-	 * µÃµ½Ñ¡ÔñµÄJAVAÊµÌåµÄÁĞ
+	 * å¾—åˆ°é€‰æ‹©çš„JAVAå®ä½“çš„åˆ—
 	 * 
 	 * @return
 	 */

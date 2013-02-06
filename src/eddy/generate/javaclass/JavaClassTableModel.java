@@ -7,7 +7,7 @@ import javax.swing.table.AbstractTableModel;
 public class JavaClassTableModel extends AbstractTableModel {
 
 	private static final long serialVersionUID = 1L;
-	final String[] names = { "ÀàĞÍ", "Ãû³Æ" };
+	final String[] names = { "ç±»å‹", "åç§°" };
 	private ArrayList<JavaClass> javaClassList = new ArrayList<JavaClass>();
 
 	public void clearData() {

@@ -26,7 +26,7 @@ import eddy.frame.docpane.DocController;
 import eddy.frame.docpane.EditTextPane;
 
 /**
- * Tab±êÇ©°´Å¥
+ * Tabæ ‡ç­¾æŒ‰é’®
  * @author Eddy
  *
  */

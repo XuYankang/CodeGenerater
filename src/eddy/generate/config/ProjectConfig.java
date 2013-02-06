@@ -35,7 +35,7 @@ public class ProjectConfig {
 	}
 	
 	/**
-	 * Éú³É¹¤³ÌÅäÖÃÎÄ¼ş
+	 * ç”Ÿæˆå·¥ç¨‹é…ç½®æ–‡ä»¶
 	 * @param newProjectDialog
 	 */
 	public static void createProjectSetting(NewProjectDialog newProjectDialog) {
@@ -72,7 +72,7 @@ public class ProjectConfig {
 	}
 	
 	/**
-	 * Éú³ÉÅäÖÃÄ¿Â¼¼°Ïà¹ØÎÄ¼ş
+	 * ç”Ÿæˆé…ç½®ç›®å½•åŠç›¸å…³æ–‡ä»¶
 	 * @param projectPath
 	 */
 	public static void createConfig(String projectPath) {
@@ -94,12 +94,12 @@ public class ProjectConfig {
 		try {
 			TextFileOperator tw = new TextFileOperator();
 			
-			//1. Éú³Émybatis mapperÎÄ¼ş
+			//1. ç”Ÿæˆmybatis mapperæ–‡ä»¶
 			f = new File(projectPath + "/WebRoot/WEB-INF/mybatis-config/config-mappers.xml");
 			f.createNewFile();
 			tw.copyFile(Resources.getResources().getResourceStream("mybatis/config-mappers.xml.templete"), f);
 			
-			//2. Éú³ÉspringÅäÖÃ
+			//2. ç”Ÿæˆspringé…ç½®
 			f = new File(projectPath + "/WebRoot/WEB-INF/spring-config/applicationContext.xml");
 			f.createNewFile();
 			tw.copyFile(Resources.getResources().getResourceStream("spring/applicationContext.xml.templete"), f);
@@ -108,7 +108,7 @@ public class ProjectConfig {
 			f.createNewFile();
 			tw.copyFile(Resources.getResources().getResourceStream("spring/springmvc-servlet.xml.templete"), f);
 			
-			//4. Éú³Éweb.xml
+			//4. ç”Ÿæˆweb.xml
 			f = new File(projectPath + "/WebRoot/WEB-INF/web.xml");
 			f.createNewFile();
 			tw.copyFile(Resources.getResources().getResourceStream("web/web.xml.templete"), f);

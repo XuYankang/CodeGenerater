@@ -36,7 +36,7 @@ import eddy.generate.webmodel.mvc.ActionGenerator_Spring;
 import eddy.log.DebugLogger;
 
 /**
- * ÏîÄ¿Ä¿Â¼Ê÷
+ * é¡¹ç›®ç›®å½•æ ‘
  * @author Eddy
  *
  */
@@ -72,7 +72,7 @@ public class ProjectTreeView extends ProjectActionAdapter {
 				
 				selectFileNode = (FileNode)treeNode.getUserObject();
 				
-				if(me.getButton() == 3) {//ÓÒ¼ü
+				if(me.getButton() == 3) {//å³é”®
 					pojectTree.setSelectionPath(path);
 					popMenu.show(pojectTree, me.getX(), me.getY());
 					if (me.isPopupTrigger()) {
@@ -90,7 +90,7 @@ public class ProjectTreeView extends ProjectActionAdapter {
 	}
 	
 	/**
-	 * ´ò¿ªÎÄ¼ş
+	 * æ‰“å¼€æ–‡ä»¶
 	 * @param f
 	 */
 	private void openFile(File f) {
@@ -106,7 +106,7 @@ public class ProjectTreeView extends ProjectActionAdapter {
 		extname = extname.substring(n);
 		
 		if(!Resources.getResources().isOpenFileType(extname)) {
-			int ret = JOptionPane.showConfirmDialog(null, "unknown file type£¬you sure open?", "waring", JOptionPane.YES_NO_OPTION);
+			int ret = JOptionPane.showConfirmDialog(null, "unknown file typeï¼Œyou sure open?", "waring", JOptionPane.YES_NO_OPTION);
 			if(ret == JOptionPane.NO_OPTION)
 				return;
 		}
@@ -122,7 +122,7 @@ public class ProjectTreeView extends ProjectActionAdapter {
 	}
 	
 	/**
-	 * Éú³Éµ¯³ö²Ëµ¥
+	 * ç”Ÿæˆå¼¹å‡ºèœå•
 	 * @return
 	 */
 	private JPopupMenu createPopuMenu() {
@@ -224,10 +224,10 @@ public class ProjectTreeView extends ProjectActionAdapter {
 		
 		if(b) {
 			pojectFileTreeModel.removeNodeFromParent(treeNode);
-			DebugLogger.getLogger().log("delete file" + f.getName() + "³É¹¦£¡");
+			DebugLogger.getLogger().log("delete file" + f.getName() + "æˆåŠŸï¼");
 		}
 		else
-			DebugLogger.getLogger().log("delete file" + f.getName() + "Ê§°Ü£¡");
+			DebugLogger.getLogger().log("delete file" + f.getName() + "å¤±è´¥ï¼");
 	}
 	
 	public void newFile() {
@@ -263,18 +263,18 @@ public class ProjectTreeView extends ProjectActionAdapter {
 			
 			ArrayList<JavaClass> jclist = cga.getSelectClassFields();
 			
-			//1. Éú³ÉJavaÊµÌåÎÄ¼ş²¢´ò¿ª
+			//1. ç”ŸæˆJavaå®ä½“æ–‡ä»¶å¹¶æ‰“å¼€
 			final DefaultMutableTreeNode treeNode = (DefaultMutableTreeNode) pojectTree.getSelectionPath().getLastPathComponent();
 			FileNode fileNode = (FileNode) treeNode.getUserObject();
 			File selectNodeFile = fileNode.getMyfile();
 			ClassGenerator.createEty(cga.getClassName(), selectNodeFile.getPath(), jclist);
 			
-			//TODO Éú³ÉDAO²ã
+			//TODO ç”ŸæˆDAOå±‚
 			String projectPath = selectNodeFile.getParentFile().getPath();
 			ClassGenerator.createIfaceDao(cga.getIbatisConfiger(), cga.getClassName(), projectPath);
 //			ClassGenerator.createIfaceDaoImpl(cga.getIbatisConfiger(), cga.getClassName(), projectPath);
 			
-			//2. Éú³É¶ÔÓ¦µÄSQLÎÄ¼ş
+			//2. ç”Ÿæˆå¯¹åº”çš„SQLæ–‡ä»¶
 			IbatisConfigPane ibatsiConfig = cga.getIbatisConfiger();
 			String sqlFileName = ibatsiConfig.getSqlFileName();
 			
@@ -287,12 +287,12 @@ public class ProjectTreeView extends ProjectActionAdapter {
 				tempFile.mkdirs();
 			}
 			
-			//Éú³ÉSQLÎÄ¼ş²¢Ïò
+			//ç”ŸæˆSQLæ–‡ä»¶å¹¶å‘
 			IBatisGenerator_MyBatis ibatisGenerator = new IBatisGenerator_MyBatis();
 			ibatisGenerator.createSqlFile(ibatsiConfig, cga.getClassName(), cga.getSelectDatabaseTable(), jclist, mybatisRootPath + "\\" + sqlFileName);
 //			ibatisGenerator.addResourceToSqlMapFile(projectPath, sqlFileName);
 			
-			//Éú³ÉXMLÅäÖÃÎÄ¼ş
+			//ç”ŸæˆXMLé…ç½®æ–‡ä»¶
 			ClassConfigGenerator.generateClassConfig(ibatsiConfig, cga.getClassName(), cga.getSelectDatabaseTable(), jclist, projectPath);
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -311,11 +311,11 @@ public class ProjectTreeView extends ProjectActionAdapter {
 			if(!wa.showAssistantDialog())
 				return;
 			
-			//1. Éú³ÉACTION
+			//1. ç”ŸæˆACTION
 			ActionGenerator ag = new ActionGenerator_Spring(wa, projectPath);
 			ag.generateAction();
 			
-			//3. Éú³ÉJS
+			//3. ç”ŸæˆJS
 //			JSGenerator jg = new JSGenerator(wa, projectPath);
 //			jg.generateJSFile();
 			JSGeneratorN jg = new JSGeneratorN(wa, projectPath);
@@ -356,7 +356,7 @@ public class ProjectTreeView extends ProjectActionAdapter {
 	
 	public void newProject() {
 		try {
-			//ÏÔÊ¾¹¤³ÌÅäÖÃ¶Ô»°¿ò
+			//æ˜¾ç¤ºå·¥ç¨‹é…ç½®å¯¹è¯æ¡†
 			NewProjectDialog newProjectDialog = new NewProjectDialog(CodeGenerater.getMainFrame());
 			if(!newProjectDialog.showDialog())
 				return;

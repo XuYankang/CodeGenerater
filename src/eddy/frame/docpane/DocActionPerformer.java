@@ -21,7 +21,7 @@ public class DocActionPerformer implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getActionCommand().equals("newDoc")) {
-			docActioner.newDoc("ÐÂÎÄµµ");
+			docActioner.newDoc("æ–°æ–‡æ¡£");
 		}
 		else if(e.getActionCommand().equals("openDoc")) {
 			File f = docActioner.showOpenDialog();

@@ -5,7 +5,7 @@ import eddy.database.DatebaseColumn;
 public class DBColumnToJavaClass {
 	
 	/**
-	 * ½«Êı¾İ¿â×Ö¶Î×ª»»ÎªJAVAÀà£¬Ö÷ÒªÊÇÀàĞÍ×ª»»
+	 * å°†æ•°æ®åº“å­—æ®µè½¬æ¢ä¸ºJAVAç±»ï¼Œä¸»è¦æ˜¯ç±»å‹è½¬æ¢
 	 * @param dc
 	 * @return
 	 */

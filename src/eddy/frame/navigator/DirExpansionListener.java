@@ -8,7 +8,7 @@ import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreePath;
 
 /**
- * Ê÷½áµãÕ¹¿ªÓë¹Ø±Õ´¦Àí
+ * æ ‘ç»“ç‚¹å±•å¼€ä¸å…³é—­å¤„ç†
  * @author Eddy
  *
  */
@@ -26,7 +26,7 @@ public class DirExpansionListener implements TreeExpansionListener {
 		Object obj = treeNode.getUserObject();
 		if(obj instanceof FileNode)
 			treeNode.removeAllChildren();
-		treeNode.add(new DefaultMutableTreeNode("ÕıÔÚ¼ÓÔØ"));
+		treeNode.add(new DefaultMutableTreeNode("æ­£åœ¨åŠ è½½"));
 	}
 
 	public void treeExpanded(TreeExpansionEvent event) {

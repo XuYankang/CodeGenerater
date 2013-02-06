@@ -1,7 +1,7 @@
 package eddy.generate.config;
 
 /**
- * ³£Á¿
+ * å¸¸é‡
  * @author Eddy
  *
  */

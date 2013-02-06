@@ -10,7 +10,7 @@ import eddy.log.DebugLogger;
 import eddy.log.DebugLoggerListener;
 
 /**
- * Êä³ö´°¿Ú
+ * è¾“å‡ºçª—å£
  * @author Eddy
  *
  */
@@ -21,7 +21,7 @@ public class OutPutPane implements DebugLoggerListener {
 		DebugLogger.getLogger().addDebugLoggerListener(this);
 		JScrollPane jsp = new JScrollPane(textArea);
 		tabPane.setFont(Resources.getResources().getSysFont_CN());
-		tabPane.add("Êä³ö", jsp);
+		tabPane.add("è¾“å‡º", jsp);
 //		tabPane.setTabComponentAt(0, new ButtonTabComponent(tabPane, 0));
 	}
 	

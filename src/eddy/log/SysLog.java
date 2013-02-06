@@ -1,14 +1,14 @@
 package eddy.log;
 
 /**
- * ÏµÍ³ÈÕÖ¾Àà<br>
- * ¼ÇÂ¼ÏµÍ³Ïà¹ØµÄ²Ù×÷
+ * ç³»ç»Ÿæ—¥å¿—ç±»<br>
+ * è®°å½•ç³»ç»Ÿç›¸å…³çš„æ“ä½œ
  * @author eddy
  *
  */
 public class SysLog extends Log{
-	private String sql;//ÏµÍ³Ö´ĞĞµÄSQLÓï¾ä
-	private String describle;//²Ù×÷µÄÃèÊö£¬ÈçµÇÂ¼£¬ÍË³ö£¬²éÑ¯µÈ
+	private String sql;//ç³»ç»Ÿæ‰§è¡Œçš„SQLè¯­å¥
+	private String describle;//æ“ä½œçš„æè¿°ï¼Œå¦‚ç™»å½•ï¼Œé€€å‡ºï¼ŒæŸ¥è¯¢ç­‰
 	public String getDescrible() {
 		return describle;
 	}
