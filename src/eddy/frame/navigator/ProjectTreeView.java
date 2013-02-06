@@ -294,6 +294,14 @@ public class ProjectTreeView extends ProjectActionAdapter {
 			
 			//生成XML配置文件
 			ClassConfigGenerator.generateClassConfig(ibatsiConfig, cga.getClassName(), cga.getSelectDatabaseTable(), jclist, projectPath);
+			
+			//打开树结点
+			
+			DefaultMutableTreeNode newNode = new DefaultMutableTreeNode(new FileNode(new File(projectPath + "\\src")));
+			pojectFileTreeModel.insertNodeInto(newNode, treeNode, treeNode.getChildCount());
+			TreeNode[] nodes = pojectFileTreeModel.getPathToRoot(newNode);
+			TreePath path = new TreePath(nodes);
+			pojectTree.scrollPathToVisible(path);
 		} catch (IOException e) {
 			e.printStackTrace();
 			DebugLogger.getLogger().log(e.getMessage());
@@ -336,13 +344,14 @@ public class ProjectTreeView extends ProjectActionAdapter {
 			return;
 		
 		File f = fileChooser.getSelectedFile();
+		//打开树结点
 		DefaultMutableTreeNode root = (DefaultMutableTreeNode) pojectFileTreeModel.getRoot();
-		
 		FileNode projectFileNode = new FileNode(f);
 		DefaultMutableTreeNode projectNode = new DefaultMutableTreeNode(projectFileNode);
-		root.add(projectNode);
+		pojectFileTreeModel.insertNodeInto(projectNode, root, root.getChildCount());
 		projectFileNode.expand(projectNode);
-		
+		TreePath path = new TreePath(projectNode.getPath());
+		pojectTree.scrollPathToVisible(path);
 		ProjectConfig.loadProjectSetting(f.getPath());
 	}
 	

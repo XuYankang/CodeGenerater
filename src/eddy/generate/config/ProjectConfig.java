@@ -62,6 +62,7 @@ public class ProjectConfig {
 			f = new File(projectPath + "/gen.project");
 			if(f.exists())
 				f.delete();
+			f.getParentFile().mkdirs();
 			f.createNewFile();
 			OutputStream fos = new FileOutputStream(f);
 			prop.store(fos, "project setting...");
