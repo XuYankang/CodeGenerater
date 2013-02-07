@@ -40,6 +40,8 @@ public class NewProjectDialog {
 	private JButton nextBtn = null;
 	private JButton backBtn = null;
 	private CardLayout card = null; // CardLayout布局管理器	
+	private int currentCard = 1;
+	private int cardNumber = 0;
 	private JPanel centerPane;
 	private JPanel contentPane = new JPanel();
 	
@@ -89,15 +91,18 @@ public class NewProjectDialog {
 		card = new CardLayout();
 		centerPane.setLayout(card);
 		centerPane.add(createProjectInfoPane(), "info");
+		cardNumber++;
 		centerPane.add(createIbatisSetPane(), "ibatis");
+		cardNumber++;
 		centerPane.add(createMVCPane(), "MVC Setting");
+		cardNumber++;
 		return centerPane;
 	}
 	
 	private JPanel createProjectInfoPane() {
 		JPanel projectJnfoPane = new JPanel();
 		String topText = "<html>\n" +
-        "<b><font size=+1 color=green>工程配置</font></b>\n" +
+        "<b><font size=+1 color=green>1. 工程配置</font></b>\n" +
         "\n";
 		
 		projectJnfoPane.setLayout(new BorderLayout());
@@ -155,7 +160,7 @@ public class NewProjectDialog {
 	private JPanel createIbatisSetPane() {
 		JPanel ibatisSetPane = new JPanel();
 		String topText = "<html>\n" +
-        "<b><font size=+1 color=green>Ibatis配置</font></b>\n" +
+        "<b><font size=+1 color=green>2. Ibatis配置</font></b>\n" +
         "\n";
 		
 		ibatisSetPane.setLayout(new BorderLayout());
@@ -196,7 +201,7 @@ public class NewProjectDialog {
 		JPanel mvcpane = new JPanel();
 		
 		String topText = "<html>\n" +
-        "<b><font size=+1 color=green>MVC 类型配置</font></b>\n" +
+        "<b><font size=+1 color=green>3. MVC 类型配置</font></b>\n" +
         "\n";
 		
 		mvcpane.setLayout(new BorderLayout());
@@ -226,16 +231,39 @@ public class NewProjectDialog {
 	private JPanel createOperatePane() {
 		JPanel operatePane = new JPanel();
 		backBtn = new JButton("< back");
+		backBtn.setEnabled(false);
 		backBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				if(currentCard <= 1) {
+					currentCard = 1;
+					return;
+				}
 				card.previous(centerPane);
+				currentCard--;
+				if(currentCard == 1) {
+					backBtn.setEnabled(false);
+				}
+				if(currentCard < cardNumber) {
+					nextBtn.setEnabled(true);
+				}
 			}
 		});
 		
 		nextBtn = new JButton("> next");
 		nextBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				if(currentCard >= cardNumber) {
+					currentCard = cardNumber;
+					return;
+				}
 				card.next(centerPane);
+				currentCard++;
+				if(currentCard == cardNumber) {
+					nextBtn.setEnabled(false);
+				}
+				if(currentCard > 1) {
+					backBtn.setEnabled(true);
+				}
 			}
 		});
 		

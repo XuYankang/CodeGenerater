@@ -10,7 +10,7 @@ import java.util.Map;
  */
 public class DocController {
 	
-	private static int index = 0;//文档ID号
+	private static int index = 1;//文档ID号
 	
 	private static DocActionListener docActionner = null;//文档操作执行器
 	
@@ -39,6 +39,7 @@ public class DocController {
 	}
 
 	private Map<Integer, EditTextPane> editPaneMap = new HashMap<Integer, EditTextPane>();
+	private Map<String, Integer> openFileIndexMap = new HashMap<String, Integer>();
 	
 	/**
 	 * 得到文档MAP
@@ -46,6 +47,10 @@ public class DocController {
 	 */
 	public Map<Integer, EditTextPane> getEditPaneMap() {
 		return editPaneMap;
+	}
+	
+	public Map<String, Integer> getFileIndexMap() {
+		return openFileIndexMap;
 	}
 
 	private static DocController controller = null;
@@ -72,12 +77,18 @@ public class DocController {
 		return editPaneMap.get(new Integer(index));
 	}
 	
+	public int getFileIndex(String filePath) {
+		Integer index = openFileIndexMap.get(filePath);
+		return index == null ? 0 : index;
+	}
+	
 	/**
 	 * 添加文档
 	 * @param index 序号
 	 * @param etc EditTextPane
 	 */
 	public void addEditTextPane(int index, EditTextPane etc) {
+		openFileIndexMap.put(etc.getFilePath(), index);
 		editPaneMap.put(new Integer(index), etc);
 	}
 	
@@ -86,6 +97,7 @@ public class DocController {
 	 * @param etc EditTextPane
 	 */
 	public void removeEditTextPane(EditTextPane etc) {
+		openFileIndexMap.remove(etc.getFilePath());
 		editPaneMap.remove(etc);
 	}
 }
